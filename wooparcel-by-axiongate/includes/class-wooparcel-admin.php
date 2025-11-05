@@ -152,11 +152,6 @@ class WooParcel_Admin {
                         <li><?php esc_html_e( 'Go to Dashboard > Pages > Checkout > Select Phone Number field and set it to required', 'wooparcel-by-axiongate' ); ?></li>
                         <li><?php esc_html_e( 'Save your changes', 'wooparcel-by-axiongate' ); ?></li>
                     </ol>
-                    <p class="help-text">
-                        <a href="<?php echo esc_url( admin_url( 'admin.php?page=wc-settings&tab=account' ) ); ?>" target="_blank">
-                            <?php esc_html_e( 'Go to WooCommerce Account Settings', 'wooparcel-by-axiongate' ); ?> →
-                        </a>
-                    </p>
                 </div>
                 
                 <div class="info-section">
