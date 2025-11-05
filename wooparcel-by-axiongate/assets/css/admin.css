@@ -1,0 +1,243 @@
+/**
+ * WooParcel Admin Styles
+ */
+
+.wooparcel-wrap {
+    margin: 20px 0;
+}
+
+.wooparcel-wrap h1 {
+    margin-bottom: 20px;
+    color: #23282d;
+}
+
+.wooparcel-content {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+}
+
+/* Home Tab Styles */
+.wooparcel-home-tab {
+    max-width: 1200px;
+}
+
+.wooparcel-home-tab .notice-info {
+    margin-bottom: 20px;
+}
+
+.wooparcel-info-sections {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.info-section {
+    background: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 25px;
+    transition: box-shadow 0.3s ease;
+}
+
+.info-section:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-section h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #2271b1;
+    font-size: 1.4em;
+    border-bottom: 2px solid #2271b1;
+    padding-bottom: 10px;
+}
+
+.info-section p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #50575e;
+}
+
+.info-section ol,
+.info-section ul {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.info-section li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    color: #50575e;
+}
+
+.help-text {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.help-text a {
+    color: #2271b1;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.help-text a:hover {
+    color: #135e96;
+    text-decoration: underline;
+}
+
+/* Setup Tab Styles */
+.wooparcel-setup-tab {
+    max-width: 800px;
+}
+
+.wooparcel-setup-tab .form-table {
+    margin-top: 20px;
+}
+
+.wooparcel-setup-tab .form-table th {
+    padding: 20px 10px 20px 0;
+    width: 200px;
+    font-weight: 600;
+}
+
+.wooparcel-setup-tab .form-table td {
+    padding: 20px 10px;
+}
+
+.wooparcel-setup-tab input[type="text"] {
+    width: 100%;
+    max-width: 500px;
+    padding: 8px 12px;
+    border: 1px solid #8c8f94;
+    border-radius: 4px;
+}
+
+.wooparcel-setup-tab input[type="text"].has-value {
+    border-color: #00a32a;
+    background-color: #f0f7f1;
+}
+
+.wooparcel-setup-tab input[type="text"]:focus {
+    border-color: #2271b1;
+    box-shadow: 0 0 0 1px #2271b1;
+    outline: none;
+}
+
+.wooparcel-setup-tab .description {
+    margin-top: 8px;
+    color: #646970;
+    font-style: italic;
+    font-size: 13px;
+}
+
+.wooparcel-setup-tab .submit {
+    margin-top: 20px;
+}
+
+/* Toggle Switch */
+.wooparcel-toggle {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.wooparcel-toggle input[type="checkbox"] {
+    display: none;
+}
+
+.toggle-slider {
+    position: relative;
+    width: 50px;
+    height: 24px;
+    background-color: #c3c4c7;
+    border-radius: 24px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.toggle-slider::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.wooparcel-toggle input[type="checkbox"]:checked + .toggle-slider {
+    background-color: #2271b1;
+}
+
+.wooparcel-toggle input[type="checkbox"]:checked + .toggle-slider::before {
+    transform: translateX(26px);
+}
+
+.toggle-slider:hover {
+    background-color: #a7aaad;
+}
+
+.wooparcel-toggle input[type="checkbox"]:checked + .toggle-slider:hover {
+    background-color: #135e96;
+}
+
+.toggle-label {
+    font-weight: 500;
+    color: #23282d;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .wooparcel-info-sections {
+        grid-template-columns: 1fr;
+    }
+    
+    .wooparcel-setup-tab .form-table th {
+        display: block;
+        width: 100%;
+        padding-bottom: 10px;
+    }
+    
+    .wooparcel-setup-tab .form-table td {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+    }
+}
+
+/* Success Notice */
+.notice-success {
+    border-left-color: #00a32a;
+}
+
+/* Button Styles */
+.button-primary {
+    background: #2271b1;
+    border-color: #2271b1;
+    color: #fff;
+}
+
+.button-primary:hover,
+.button-primary:focus {
+    background: #135e96;
+    border-color: #135e96;
+}
+
+.button-primary:active {
+    background: #0a4b78;
+    border-color: #0a4b78;
+}
+
