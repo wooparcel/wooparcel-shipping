@@ -72,8 +72,14 @@ The Auto AWB (Air Waybill) feature automatically generates AWB numbers for compl
 ## Screenshots
 
 1. Home tab with setup instructions
-2. Setup tab with API configuration options
-3. AWB List Page
+<img width="3816" height="1990" alt="home_tab" src="https://github.com/user-attachments/assets/db837d80-4074-49d4-89c3-3ba6142030a8" />
+
+3. Setup tab with API configuration options
+<img width="3792" height="1936" alt="setup_tab" src="https://github.com/user-attachments/assets/bde2212b-cc59-4fc3-baa3-91845ee1e2fe" />
+
+4. AWB List Page
+<img width="3792" height="1862" alt="awb_list_tab" src="https://github.com/user-attachments/assets/f28b7481-1670-4039-8984-71279aa94785" />
+
 
 ## Changelog
 
