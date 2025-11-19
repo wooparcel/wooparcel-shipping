@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Parcel Tracker by AxionGate
- * Plugin URI: https://axiongate.com
+ * Plugin URI: https://github.com/wooparcel/wooparcel-shipping
  * Description: Manage shop details, configure API settings, and collect order data when orders are completed.
  * Version: 1.0.1
  * Author: axiongate
