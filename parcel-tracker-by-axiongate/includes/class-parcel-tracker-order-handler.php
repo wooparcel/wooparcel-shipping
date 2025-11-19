@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class WooParcel_Order_Handler {
+class ParcelTracker_Order_Handler {
     
     private static $instance = null;
     private $settings;
@@ -20,7 +20,7 @@ class WooParcel_Order_Handler {
     }
     
     private function __construct() {
-        $this->settings = WooParcel_Settings::get_instance();
+        $this->settings = ParcelTracker_Settings::get_instance();
         
         // Hook into WooCommerce order status change
         add_action( 'woocommerce_order_status_completed', array( $this, 'handle_completed_order' ), 10, 1 );
@@ -47,7 +47,7 @@ class WooParcel_Order_Handler {
     /**
      * Collect order data
      */
-    private function collect_order_data( $order ) {
+    public function collect_order_data( $order ) {
         // Basic order information
         $order_data = array(
             'order_id' => $order->get_id(),
@@ -473,8 +473,8 @@ class WooParcel_Order_Handler {
         }
 
         // Update meta with extracted values (empty strings if absent)
-        update_post_meta( $order_id, '_wooparcel_awb_number', $awb_from_api );
-        update_post_meta( $order_id, '_wooparcel_courier_reference', $courier_ref );
+        update_post_meta( $order_id, '_parcel_tracker_awb_number', $awb_from_api );
+        update_post_meta( $order_id, '_parcel_tracker_courier_reference', $courier_ref );
     }
     
 }

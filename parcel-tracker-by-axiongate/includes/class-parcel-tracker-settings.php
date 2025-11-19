@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class WooParcel_Settings {
+class ParcelTracker_Settings {
     
     private static $instance = null;
     private $settings = array();
@@ -28,10 +28,10 @@ class WooParcel_Settings {
      */
     private function load_settings() {
         $this->settings = array(
-            'api_key' => get_option( 'wooparcel_api_key', '' ),
-            'api_code' => get_option( 'wooparcel_api_code', '' ),
-            'auto_awb' => get_option( 'wooparcel_auto_awb', false ),
-            'remote_api' => get_option( 'wooparcel_remote_api', '' ),
+            'api_key' => get_option( 'parcel_tracker_api_key', '' ),
+            'api_code' => get_option( 'parcel_tracker_api_code', '' ),
+            'auto_awb' => get_option( 'parcel_tracker_auto_awb', false ),
+            'remote_api' => get_option( 'parcel_tracker_remote_api', '' ),
         );
     }
     
@@ -54,7 +54,7 @@ class WooParcel_Settings {
      */
     public function update( $key, $value ) {
         $this->settings[ $key ] = $value;
-        update_option( 'wooparcel_' . $key, $value );
+        update_option( 'parcel_tracker_' . $key, $value );
     }
     
     /**

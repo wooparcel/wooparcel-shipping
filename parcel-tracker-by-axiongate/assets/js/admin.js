@@ -1,5 +1,5 @@
 /**
- * WooParcel Admin JavaScript
+ * ParcelTracker Admin JavaScript
  */
 
 (function($) {
@@ -7,24 +7,24 @@
 
     $(document).ready(function() {
         // Ensure submit reaches backend using AJAX
-        $('#wooparcel-settings-form').on('submit', function(e) {
+        $('#parcel-tracker-settings-form').on('submit', function(e) {
             try {
                 var $form = $(this);
                 var key = $.trim($('#api_key').val() || '');
                 var code = $.trim($('#api_code').val() || '');
                 var remoteApi = $.trim($('#remote_api').val() || '');
                 var autoAwb = $('#auto_awb').is(':checked');
-                console.log('[WooParcel] Submitting settings', {
+                console.log('[ParcelTracker] Submitting settings', {
                     api_key_len: key.length,
                     api_code_len: code.length,
                     remote_api_len: remoteApi.length,
                     auto_awb: autoAwb
                 });
                 e.preventDefault();
-                var ajaxUrl = window.WooParcelAjax && WooParcelAjax.ajaxUrl ? WooParcelAjax.ajaxUrl : (window.ajaxurl || '/wp-admin/admin-ajax.php');
-                var nonce   = window.WooParcelAjax && WooParcelAjax.nonce ? WooParcelAjax.nonce : $('input[name="wooparcel_settings_nonce"]').val();
+                var ajaxUrl = window.ParcelTrackerAjax && ParcelTrackerAjax.ajaxUrl ? ParcelTrackerAjax.ajaxUrl : (window.ajaxurl || '/wp-admin/admin-ajax.php');
+                var nonce   = window.ParcelTrackerAjax && ParcelTrackerAjax.nonce ? ParcelTrackerAjax.nonce : $('input[name="parcel_tracker_settings_nonce"]').val();
                 if (!ajaxUrl) {
-                    console.error('[WooParcel] Missing AJAX URL; aborting save');
+                    console.error('[ParcelTracker] Missing AJAX URL; aborting save');
                     return false;
                 }
 
@@ -33,49 +33,49 @@
                     method: 'POST',
                     dataType: 'json',
                     data: {
-                        action: 'wooparcel_save_settings',
-                        wooparcel_settings_nonce: nonce,
+                        action: 'parcel_tracker_save_settings',
+                        parcel_tracker_settings_nonce: nonce,
                         api_key: key,
                         api_code: code,
                         remote_api: remoteApi,
                         auto_awb: autoAwb ? 'on' : ''
                     }
                 }).done(function(resp) {
-                    console.log('[WooParcel] AJAX save response', resp);
-                    if (resp && resp.success && window.WooParcelAjax && WooParcelAjax.redirect) {
-                        window.location = WooParcelAjax.redirect;
+                    console.log('[ParcelTracker] AJAX save response', resp);
+                    if (resp && resp.success && window.ParcelTrackerAjax && ParcelTrackerAjax.redirect) {
+                        window.location = ParcelTrackerAjax.redirect;
                     } else {
                         alert(resp && resp.data && resp.data.message ? resp.data.message : 'Save failed.');
                     }
                 }).fail(function(xhr) {
-                    console.log('[WooParcel] AJAX save failed', xhr && xhr.responseText);
+                    console.log('[ParcelTracker] AJAX save failed', xhr && xhr.responseText);
                     alert('Save failed. Check debug log for details.');
                 });
             } catch (err) {}
         });
         // Marker that script loaded
         if (window.console && window.console.log) {
-            console.log('[WooParcel] admin.js loaded');
+            console.log('[ParcelTracker] admin.js loaded');
         }
 
         // Also log on Save button click to catch fast navigations
-        $('button[name="wooparcel_save_settings"]').on('click', function(e) {
-            console.log('[WooParcel] Click Save');
+        $('button[name="parcel_tracker_save_settings"]').on('click', function(e) {
+            console.log('[ParcelTracker] Click Save');
             try {
                 var key = $.trim($('#api_key').val() || '');
                 var code = $.trim($('#api_code').val() || '');
                 var autoAwb = $('#auto_awb').is(':checked');
-                console.log('[WooParcel] Click Save', {
+                console.log('[ParcelTracker] Click Save', {
                     api_key_len: key.length,
                     api_code_len: code.length,
                     auto_awb: autoAwb
                 });
                 // Ensure form submit handler runs for AJAX path
                 e.preventDefault();
-                $('#wooparcel-settings-form').trigger('submit');
+                $('#parcel-tracker-settings-form').trigger('submit');
             } catch (err) {
-                console.log('[WooParcel] Error clicking Save', err);
-                console.log('[WooParcel] Error clicking Save', {
+                console.log('[ParcelTracker] Error clicking Save', err);
+                console.log('[ParcelTracker] Error clicking Save', {
                     api_key_len: key.length,
                     api_code_len: code.length,
                     auto_awb: autoAwb
@@ -86,21 +86,21 @@
         // Animate tab switching
         $('.nav-tab').on('click', function(e) {
             // Smooth transition
-            $('.wooparcel-content').fadeOut(200, function() {
+            $('.parcel-tracker-content').fadeOut(200, function() {
                 $(this).fadeIn(200);
             });
         });
         
         // Toggle switch animation
-        $('.wooparcel-toggle input[type="checkbox"]').on('change', function() {
+        $('.parcel-tracker-toggle input[type="checkbox"]').on('change', function() {
             const $toggle = $(this);
             const isChecked = $toggle.is(':checked');
             
             // Add a visual feedback
-            $toggle.closest('.wooparcel-toggle').addClass('toggle-active');
+            $toggle.closest('.parcel-tracker-toggle').addClass('toggle-active');
             
             setTimeout(function() {
-                $toggle.closest('.wooparcel-toggle').removeClass('toggle-active');
+                $toggle.closest('.parcel-tracker-toggle').removeClass('toggle-active');
             }, 200);
             
             // Log for debugging
@@ -115,7 +115,7 @@
         }, 5000);
         
         // Add loading state to save button
-        $('button[name="wooparcel_save_settings"]').on('click', function() {
+        $('button[name="parcel_tracker_save_settings"]').on('click', function() {
             const $button = $(this);
             const originalText = $button.text();
             
@@ -132,7 +132,7 @@
         });
 
         // Handle AWB label download
-        $(document).on('click', '.wooparcel-download-label', function(e) {
+        $(document).on('click', '.parcel-tracker-download-label', function(e) {
             e.preventDefault();
             const $button = $(this);
             const labelBase64 = $button.data('label');
@@ -169,7 +169,7 @@
                     $button.text('Download Label').prop('disabled', false);
                 }, 2000);
             } catch (err) {
-                console.error('[WooParcel] Error downloading label:', err);
+                console.error('[ParcelTracker] Error downloading label:', err);
                 alert('Failed to download label. Please try again.');
             }
         });
