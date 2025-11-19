@@ -5,7 +5,7 @@ Manage shop details, configure API settings, and collect order data when orders 
 - Plugin Name: Parcel Tracker by AxionGate
 - Plugin URI: https://Parcel Tracker.com
 - Description: Manage shop details, configure API settings, and collect order data when orders are completed.
-- Version: 1.0.0
+- Version: 1.0.1
 - Author: Parcel Tracker
 - Author URI: https://Parcel Tracker.com
 - License: GPL v2 or later
