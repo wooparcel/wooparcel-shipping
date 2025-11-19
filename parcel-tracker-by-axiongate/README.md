@@ -1,16 +1,16 @@
-# WooParcel by AxionGate
+# Parcel Tracker by AxionGate
 
 Manage shop details, configure API settings, and collect order data when orders are completed.
 
-- Plugin Name: WooParcel by AxionGate
-- Plugin URI: https://wooparcel.com
+- Plugin Name: Parcel Tracker by AxionGate
+- Plugin URI: https://Parcel Tracker.com
 - Description: Manage shop details, configure API settings, and collect order data when orders are completed.
 - Version: 1.0.0
-- Author: wooparcel
-- Author URI: https://wooparcel.com
+- Author: Parcel Tracker
+- Author URI: https://Parcel Tracker.com
 - License: GPL v2 or later
 - License URI: https://www.gnu.org/licenses/gpl-2.0.html
-- Text Domain: wooparcel-by-axiongate
+- Text Domain: Parcel Tracker-by-axiongate
 - Requires at least: WordPress 5.0
 - Tested up to: 6.8
 - Requires PHP: 7.2
@@ -19,10 +19,10 @@ Manage shop details, configure API settings, and collect order data when orders 
 
 ## Description
 
-WooParcel by AxionGate is a WooCommerce plugin that helps you:
+Parcel Tracker by AxionGate is a WooCommerce plugin that helps you:
 
 - View helpful information on configuring shop details and making phone numbers mandatory
-- Configure API settings for integration with shipping services (connections keys provided by WooParcel by AxionGate team after enrollment.)
+- Configure API settings for integration with shipping services (connections keys provided by Parcel Tracker by AxionGate team after enrollment.)
 - Automatically collect order data when orders are marked as completed
 - Generate and list AWBs
 
@@ -47,9 +47,9 @@ WooParcel by AxionGate is a WooCommerce plugin that helps you:
 
 ## Installation
 
-1. Upload the `wooparcel-by-axiongate` folder to the `/wp-content/plugins/` directory
+1. Upload the `Parcel Tracker-by-axiongate` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Go to WooParcel by AxionGate in the admin menu to configure settings
+3. Go to Parcel Tracker by AxionGate in the admin menu to configure settings
 4. Open the AWB List submenu to view recent AWBs and download labels
 
 ## Requirements
@@ -61,7 +61,7 @@ WooParcel by AxionGate is a WooCommerce plugin that helps you:
 ## Frequently Asked Questions
 
 ### Does this plugin require WooCommerce?
-Yes, WooParcel requires WooCommerce to be installed and active.
+Yes, Parcel Tracker requires WooCommerce to be installed and active.
 
 ### Where is the collected order data stored?
 Order data is collected and processed when orders are marked as completed.
